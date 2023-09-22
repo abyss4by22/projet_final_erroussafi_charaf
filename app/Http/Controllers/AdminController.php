@@ -11,4 +11,10 @@ class AdminController extends Controller
         $users = User::all();
         return view("admin.admin_dash",compact("users"));
     }
+    public function users(){
+        $users = User::all();
+        return view("admin.users",compact("users"));
+    }
+
+ 
 }

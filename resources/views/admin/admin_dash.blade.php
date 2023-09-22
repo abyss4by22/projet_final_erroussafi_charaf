@@ -9,12 +9,11 @@
     @foreach ($users as $user)
     @if ($user->hasRole('admin'))
         <div>
-            <h4>User Info:</h4>
-            <p>Name: {{ $user->name }}</p>
-            <p>Email: {{ $user->email }}</p>
-            <p>Role: Admin</p>
+          <h1> Welcome {{$user->name}}</h1>  
         </div>
     @endif
 @endforeach
+
+<a href="{{route("admin.users")}}">all users</a>
 </body>
 </html>

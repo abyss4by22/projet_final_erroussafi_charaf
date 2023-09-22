@@ -40,4 +40,10 @@ require __DIR__.'/auth.php';
 
 
 //admin
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.index')
+    ->middleware('admin');
+    Route::get('/admin/users', [AdminController::class, 'users'])
+    ->name('admin.users')
+    ->middleware('admin');
+
