@@ -364,6 +364,8 @@
         <div class="single_product_text">
             <h4>{{ $product->name }}</h4>
             <h3>{{ $product->price }}</h3>
+            <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+
         </div>
     </div>
 @endif

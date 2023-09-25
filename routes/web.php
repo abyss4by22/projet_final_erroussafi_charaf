@@ -47,3 +47,18 @@ Route::get('/admin', [AdminController::class, 'index'])
     ->name('admin.users')
     ->middleware('admin');
 
+//product
+ //page
+ Route::get("/admin/products",[AdminController::class,"products"])->name("admin.products");
+
+
+//show
+
+Route::get('/products/show/{id}' , [HomeController::class , "show"])->name("product.show");
+
+// users 
+
+//delete
+Route::delete('/admin/users/{user}/delete', [AdminController::class,"destroy"])->name('user.destroy');
+
+Route::post('/admin/user/{userId}/update-role', [AdminController::class,"updateRole"])->name('admin.user.updateRole');

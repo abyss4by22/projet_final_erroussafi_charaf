@@ -46,7 +46,7 @@
                                                 <h1>{{ $products[$i]->name }}</h1>
                                                 <p>{{ $products[$i]->price }}</p>
                                                 <p>Stock: {{ $products[$i]->stock }}</p>
-                                                <a href="#" class="btn_2">buy now</a>
+                                                <a href="{{route("product.show",$products[$i])}}" class="btn_2">buy now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@
             <div class="single_feature_post_text">
                 <p>Premium Quality</p>
                 <h3>{{ $product->name }}</h3>
-                <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+                <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
                 <img src="{{ asset('img/my-product-img/' . $product->img) }}">
             </div>
         </div>
@@ -95,7 +95,7 @@
         <div class="single_feature_post_text">
             <p>Premium Quality</p>
             <h3>{{ $product->name }}</h3>
-            <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+            <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
             <img src="{{ asset('img/my-product-img/' . $product->img) }}">
         </div>
     </div>
@@ -108,7 +108,7 @@
         <div class="single_feature_post_text">
             <p>Premium Quality</p>
             <h3>{{ $product->name }}</h3>
-            <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+            <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
             <img src="{{ asset('img/my-product-img/' . $product->img) }}">
         </div>
     </div>
@@ -124,7 +124,7 @@
                         <div class="single_feature_post_text">
                             <p>Premium Quality</p>
                             <h3>{{ $product->name }}</h3>
-                            <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+                            <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
                             <img src="{{ asset('img/my-product-img/' . $product->img) }}">
                         </div>
                     </div>
@@ -158,6 +158,7 @@
                                                 <div class="single_product_text">
                                                     <h4>{{ $product->name }}</h4>
                                                     <h3>{{ $product->price }}</h3>
+                                                    <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
                                                     <a class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                                 </div>
                                             </div>
@@ -178,6 +179,7 @@
                                             <div class="single_product_text">
                                                 <h4>{{ $product->name }}</h4>
                                                 <h3>{{ $product->price }}</h3>
+                                                <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
                                                 <a class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                             </div>
                                         </div>
@@ -247,6 +249,8 @@
             <div class="single_product_text">
                 <h4>{{ $product->name }}</h4>
                 <h3>{{ $product->price }}</h3>
+                <a href="{{route("product.show",$product->id)}}" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
+
             </div>
         </div>
     @endif
