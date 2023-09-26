@@ -58,8 +58,11 @@
                             <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
                                 class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = ' Email Address '">
+                                <form action="{{route("email.send")}}" method="POST">
+                                    @csrf
                             <button type="submit" name="submit" id="newsletter-submit"
                                 class="email_icon newsletter-submit button-contactForm">subscribe</button>
+                            </form>
                             <div class="mt-10 info"></div>
                         </form>
                     </div>

@@ -72,3 +72,6 @@ Route::put("/admin/products/update/{product}",[ProductController::class,"update"
 Route::delete('/admin/users/{user}/delete', [AdminController::class,"destroy"])->name('user.destroy');
 
 Route::post('/admin/user/{userId}/update-role', [AdminController::class,"updateRole"])->name('admin.user.updateRole');
+
+//email
+Route::post('/email/send', [ContactController::class,"send"])->name('email.send');
