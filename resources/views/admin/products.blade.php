@@ -29,7 +29,21 @@
 
     <h1 class="text-center">Products</h1>
     <div class="d-flex justify-content-center ">
-    <button type="button" class="btn btn-primary m-4 ">create product</button>
+    <a href="{{route("admin.createProducts.page")}}" class="btn btn-primary"> add product</a>
 </div>
+<section>
+    @foreach ($products as $product)
+    <div>
+    <h1>{{$product->name}}</h1>
+    <img src="{{asset("storage/img/".$product->img)}}" alt="">
+    <form action="{{route("product.destroy", $product->id)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">delete</button>
+    </form>
+    <a href="{{route("admin.updateProducts.page",$product->id)}}" class="btn btn-secondary">update product</a>
+    </div>
+    @endforeach
+</section>
 </body>
 </html>

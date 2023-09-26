@@ -39,7 +39,6 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit"  class="btn btn-danger">delete</button>
-
                         </form>
                         <form action="{{ route('admin.user.updateRole',$user->id) }}" method="POST">
                             @csrf

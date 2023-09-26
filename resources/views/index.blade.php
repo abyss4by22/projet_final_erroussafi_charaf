@@ -37,26 +37,28 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="banner_slider owl-carousel">
-                        @for ($i = 0; $i < 3; $i++)
+                        @php
+                            $randomProducts = $products->random(3);
+                        @endphp
+                        @foreach ($randomProducts as $product)
                             <div class="single_banner_slider">
                                 <div class="row">
                                     <div class="col-lg-5 col-md-8">
                                         <div class="banner_text">
                                             <div class="banner_text_iner">
-                                                <h1>{{ $products[$i]->name }}</h1>
-                                                <p>{{ $products[$i]->price }}</p>
-                                                <p>Stock: {{ $products[$i]->stock }}</p>
-                                                <a href="{{route("product.show",$products[$i])}}" class="btn_2">buy now</a>
+                                                <h1>{{ $product->name }}</h1>
+                                                <p>{{ $product->price }}</p>
+                                                <p>Stock: {{ $product->stock }}</p>
+                                                <a href="{{ route('product.show', $product) }}" class="btn_2">buy now</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="banner_img d-none d-lg-block">
-                                        <img src="{{ asset('img/my-product-img/' . $products[$i]->img) }}"
-                                            alt="">
+                                        <img src="{{ asset('img/my-product-img/' . $product->img) }}" alt="">
                                     </div>
                                 </div>
                             </div>
-                        @endfor
+                        @endforeach
                     </div>
                     <div class="slider-counter"></div>
                 </div>
@@ -200,7 +202,13 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6">
                     <div class="offer_img">
-                        <img src="img/offer_img.png" alt="">
+                        @php
+                        $randomProduits = $products->random(1);
+                    @endphp
+                    @foreach ($randomProduits as $item)
+                    <img src="{{ asset('img/my-product-img/' . $item->img) }}" alt="">
+                    @endforeach
+                        
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

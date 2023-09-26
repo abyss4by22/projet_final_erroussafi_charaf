@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
@@ -51,11 +52,20 @@ Route::get('/admin', [AdminController::class, 'index'])
  //page
  Route::get("/admin/products",[AdminController::class,"products"])->name("admin.products");
 
+ //createpage
+ Route::get("/admin/products/create/page",[AdminController::class,"createPage"])->name("admin.createProducts.page");
+//create
+Route::post("/admin/products/create",[ProductController::class,"storeProducts"])->name("admin.createProducts");
 
 //show
 
 Route::get('/products/show/{id}' , [HomeController::class , "show"])->name("product.show");
 
+// delete
+Route::delete('/admin/products/delete/{product}', [ProductController::class,"delete"])->name('product.destroy');
+//update
+Route::get("/admin/products/update/page/{id}",[AdminController::class,"updatePage"])->name("admin.updateProducts.page");
+Route::put("/admin/products/update/{product}",[ProductController::class,"update"])->name("product.update");
 // users 
 
 //delete
