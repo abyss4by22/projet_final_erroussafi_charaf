@@ -34,11 +34,11 @@ class ContactController extends Controller
 
 public function send(){
     $user = Auth::user();
-    $DemoMail = [
+    $demoMail = [
         "email"=>$user->email,
         "name"=>$user->name,
     ];
-    Mail::to($user->email)->send(new DemoMail($DemoMail));
+    Mail::to($user->email)->send(new DemoMail($demoMail));
     return redirect()->back();
 }
 }

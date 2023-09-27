@@ -17,6 +17,9 @@
             <a class="nav-link" href="{{route("admin.users")}}">Users</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route("mailbox")}}">Mailbox</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route("home.index")}}">Site</a>
           </li>
         </ul>

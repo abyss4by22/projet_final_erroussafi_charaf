@@ -3,7 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactMailController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
@@ -47,6 +49,7 @@ Route::get('/admin', [AdminController::class, 'index'])
     Route::get('/admin/users', [AdminController::class, 'users'])
     ->name('admin.users')
     ->middleware('admin');
+Route::get('/mailbox' , [ContactMailController::class , "index"])->name("mailbox")->middleware("admin");
 
 //product
  //page
@@ -75,3 +78,6 @@ Route::post('/admin/user/{userId}/update-role', [AdminController::class,"updateR
 
 //email
 Route::post('/email/send', [ContactController::class,"send"])->name('email.send');
+
+Route::post('/mailbox/store' , [ContactMailController::class , "store"])->name("contactMail.store");
+Route::post('/newsletter/store' , [NewsletterController::class , "store"])->name("newsletter.store");

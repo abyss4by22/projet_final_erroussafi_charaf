@@ -64,12 +64,11 @@
           <h2 class="contact-title">Get in Touch</h2>
         </div>
         <div class="col-lg-8">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-            novalidate="novalidate">
+          <form class="form-contact contact_form" action="{{route("contactMail.store")}}" method="POST">
+            @csrf
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-
                   <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
                     placeholder='Enter Message'></textarea>
@@ -95,7 +94,7 @@
               </div>
             </div>
             <div class="form-group mt-3">
-              <a href="#" class="btn_3 button-contactForm">Send Message</a>
+              <button type="submit" class="btn_3 button-contactForm">Send Message</button>
             </div>
           </form>
         </div>
